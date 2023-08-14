@@ -1,0 +1,363 @@
+########## WIN SCENARIO #############
+
+swipl treasure_hunt.pl 
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.4.2)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+
+Enter commands using standard Prolog syntax.
+Available commands are:
+start.                  -- to start the game.
+up. down. right. left.  -- to go in that direction.
+take(Object).           -- to pick up an object.
+drop(Object).           -- to put down an object.
+look.                   -- to look around you again.
+i.                      -- list the inventory of items.
+find.                   -- to find the treasure.
+instructions.           -- to see this message again.
+halt.                   -- to end the game and quit.
+
+You are at the campsite.
+You can find a flashlight here which can
+help you move forward.
+
+There is a flashlight here.
+
+You have 3 lives.
+true.
+
+?- take(flashlight).
+OK.
+true.
+
+?- look.
+You are at the Campsite.
+
+
+You have 3 lives.
+true.
+
+?- up.
+The shack is locked, Please get the key from the shelter.
+You can't go that way.
+true.
+
+?- down.
+You need a battery to turn on the flashlight. Get a battery from the shack.
+You can't go that way.
+true.
+
+?- left.
+You are inside the shelter.
+You can find the key to shack in here.
+
+There is a key here.
+
+You have 3 lives.
+true.
+
+?- take(key).
+OK.
+true.
+
+?- i.
+You are holding: 
+flashlight
+key
+true.
+
+?- right.
+You are at the Campsite.
+
+
+You have 3 lives.
+true.
+
+?- lives(X).
+X = 3.
+
+?- up.
+You are inside the shack.
+You can find the battery for the flashlight here.
+
+There is a battery here.
+
+You have 3 lives.
+true.
+
+?- take(battery).
+OK.
+true.
+
+?- down.
+You are at the Campsite.
+
+
+You have 3 lives.
+true.
+
+?- i.
+You are holding: 
+flashlight
+key
+battery
+true.
+
+?- drop(battery).
+OK.
+true.
+
+?- right.
+You need a battery to turn on the flashlight. Get a battery from the shack.
+You can't go that way.
+true.
+
+?- look.
+You are at the Campsite.
+
+There is a battery here.
+
+You have 3 lives.
+true.
+
+?- take(battery).
+OK.
+true.
+
+?- right.
+You are in the woods.
+Make sure your flashlight is on.
+
+
+You have 3 lives.
+true.
+
+?- up.
+
+Bad luck. Go back to save yourself.
+You walked in to the deep forest.
+You are about to lose 1 life.
+
+
+You have 2 lives.
+true.
+
+?- down.
+You are in the woods.
+Make sure your flashlight is on.
+
+
+You have 2 lives.
+true.
+
+?- right.
+You are at the castle, but do you have a blueprint to find the treasure? 
+You reached the castle. There is hidden treasure inside.
+This is your chance to win.
+
+
+You have 2 lives.
+true.
+
+?- find.
+You dont have a blueprint to find the treasure.
+true.
+
+?- down.
+Be careful. You just have 1 life left.
+
+Bad luck. Go back to save yourself.
+You walked in to the deep forest.
+You are about to lose 1 life.
+
+
+You have 1 lives.
+true.
+
+?- up.
+You are at the castle, but do you have a blueprint to find the treasure? 
+You reached the castle. There is hidden treasure inside.
+This is your chance to win.
+
+
+You have 1 lives.
+true.
+
+?- up.
+You are inside the tower.
+Grab the blueprint to unlock the hidden treasure.
+
+There is a blueprint here.
+
+You have 1 lives.
+true.
+
+?- take(blueprint).
+OK.
+true.
+
+?- i.
+You are holding: 
+flashlight
+key
+battery
+blueprint
+true.
+
+?- down.
+You have the blueprint. Use find. to get the treasure. 
+You reached the castle. There is hidden treasure inside.
+This is your chance to win.
+
+
+You have 1 lives.
+true.
+
+?- find.
+AMAZING!!. You found the treasure.
+Collect the treasure and finish the game.
+true.
+
+?- take(treasure).
+CONGRATULATIONS!!! YOU HAVE THE TREASURE IN HAND. YOU WON!!.
+
+############## LOSE SCENARIO #################
+
+swipl treasure_hunt.pl 
+Welcome to SWI-Prolog (threaded, 64 bits, version 8.4.2)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+
+Enter commands using standard Prolog syntax.
+Available commands are:
+start.                  -- to start the game.
+up. down. right. left.  -- to go in that direction.
+take(Object).           -- to pick up an object.
+drop(Object).           -- to put down an object.
+look.                   -- to look around you again.
+i.                      -- list the inventory of items.
+find.                   -- to find the treasure.
+instructions.           -- to see this message again.
+halt.                   -- to end the game and quit.
+
+You are at the campsite.
+You can find a flashlight here which can
+help you move forward.
+
+There is a flashlight here.
+
+You have 3 lives.
+true.
+
+?- take(flashlight).
+OK.
+true.
+
+?- left.
+You are inside the shelter.
+You can find the key to shack in here.
+
+There is a key here.
+
+You have 3 lives.
+true.
+
+?- take(key).
+OK.
+true.
+
+?- right.
+You are at the Campsite.
+
+
+You have 3 lives.
+true.
+
+?- up.
+You are inside the shack.
+You can find the battery for the flashlight here.
+
+There is a battery here.
+
+You have 3 lives.
+true.
+
+?- take(battery).
+OK.
+true.
+
+?- down.
+You are at the Campsite.
+
+
+You have 3 lives.
+true.
+
+?- right.
+You are in the woods.
+Make sure your flashlight is on.
+
+
+You have 3 lives.
+true.
+
+?- down.
+
+Bad luck. Go back to save yourself.
+You walked in to the deep forest.
+You are about to lose 1 life.
+
+
+You have 2 lives.
+true.
+
+?- up.
+You are in the woods.
+Make sure your flashlight is on.
+
+
+You have 2 lives.
+true.
+
+?- up.
+Be careful. You just have 1 life left.
+
+Bad luck. Go back to save yourself.
+You walked in to the deep forest.
+You are about to lose 1 life.
+
+
+You have 1 lives.
+true.
+
+?- down.
+You are in the woods.
+Make sure your flashlight is on.
+
+
+You have 1 lives.
+true.
+
+?- right.
+You are at the castle, but do you have a blueprint to find the treasure? 
+You reached the castle. There is hidden treasure inside.
+This is your chance to win.
+
+
+You have 1 lives.
+true.
+
+?- down.
+
+You walked in to the deep forest again.
+You have 0 lives left. GAME OVER!!. %                                                                        
